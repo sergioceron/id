@@ -51,12 +51,13 @@ cd blockchain-backend/ethereum/contracts
 ```
     git clone -b alastria https://gitlab.com/everis-blockchain/id/mobile-backend.git
 ```
+
 ## Instalacion
 
 1. **Red Ethereum**  Blockchain de nodos de Parity
-2. **Blockchain Backend**  Microservicios de comunicación con Parity
-3. **Mobile Backend**  Aplicación Web Node para la App mobile
-4. **Data Access Service - DAS** Administración de datos de usuario
+2. **Data Access Service - DAS** Administración de datos de usuario
+3. **Blockchain Backend**  Microservicios de comunicación con Parity
+4. **Mobile Backend**  Aplicación Web Node para la App mobile (según versión)
 5. **App Mobile**
 #
 
