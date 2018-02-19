@@ -55,10 +55,45 @@ cd blockchain-backend/ethereum/contracts
 ## Instalacion
 
 1. **Red Ethereum**  Blockchain de nodos de Parity
-2. **Data Access Service - DAS** Administración de datos de usuario
+2. IPFS
+    Variables:
+    - export ipfs_staging=/Users/Edumar/blockchain/ID/ipfs/volume/export
+    - export ipfs_data=/Users/Edumar/blockchain/ID/ipfs/volume/data
+
+
+    ```
+    $ cd /ms/ipfs
+    $ docker build -t ipfsid:latest -f Dockerfile .
+    $ docker run -d --name ipfs_host -v $ipfs_staging:/export  -v $ipfs_data:/data/ipfs  -p 4001:4001  -p 127.0.0.1:8080:8080  -p 127.0.0.1:5001:5001 ipfsid:latest
+    ```
 3. **Blockchain Backend**  Microservicios de comunicación con Parity
-4. **Mobile Backend**  Aplicación Web Node para la App mobile (según versión)
-5. **App Mobile**
-#
+
+4. **Data Access Service - DAS** Administración de datos de usuario
+    Compile la Aplicacion DAS
+    ```
+    $ cd das
+    $ gradle clean build -x test
+    ```
+    Compile dockerfile
+    
+    ```
+    docker build -t das:v1.0 -f Dockerfile .
+
+    ```
+    Arrancar contenedor
+    
+    ```
+    docker run  -itd  --name das -p 5070:5070  --link ipfs_host:ipfs_host --env HOST_LOGSTASH=52.225.224.83  --env BLOCKCHAIN_URL=http://192.168.1.102:8545 --env VERIFY_HOST=192.168.1.102 --env IPFS_URL=http://ipfs_host --env BLOCKCHAIN_PASSWORD=WcjqHOdBTUYkIUVD das:v1.0
+    ```
+    Variables de entorno:
+    - BLOCKCHAIN_URL = URL nodo ethereum
+    - BLOCKCHAIN_PASSWORD = Password de cuenta para despliegue de contratos.
+    - IPFS_URL = URL nodo de IPFS
+    - HOST_LOGSTASH = URL microservicio de LogStash
+    - VERIFY_HOST = Microservicio Nodeapi
+
+5. **Mobile Backend**  Aplicación Web Node para la App mobile (según versión)
+6. **App Mobile**
+
 
 
