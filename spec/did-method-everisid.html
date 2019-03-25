@@ -40,22 +40,25 @@
         everisID seeks to facilitate internet-wide, self-sovereign identity. On that basis, identifiers must be both assigned and resolved in a decentralised way.
         
         In everisID, each identity is represented by an Ethereum smart contract called "Proxy contract", deployed on any Ethereum network. Through a forwarding mechanism, that contract represents the identity owner in all transactions on that network. Specificities about how the Proxy contract works are outside the scope of this document.
-        
-        ## DID Method Name
-        
-        
-        ## DID format
+
+
+        ## DIDs
+
+        ### DID format
         
         The DID specification defines the following format for DIDs:
         
         ```
-        did:<scheme><scheme-specific-identifier>
+        did:<scheme>:<scheme-specific-identifier>
         ```
         
-        ## Method Specific Identifier
-        
+        ### DID Method Name
+
         The scheme that shall identify this DID method is: `ev`.
         
+        ### Method-Specific Identifier
+
+
         The method-specific identifier is composed of an optional Ethereum network identifier with a `:` separator, followed by an MNID.
         
           everisid-did = "did:ev:" mnid
@@ -67,7 +70,7 @@
         
         Example `ev` DID:
         
-         * `did:ev:TODO`
+         * `did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42`
         
         ## DID Document
         
