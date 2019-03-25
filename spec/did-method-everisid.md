@@ -4,22 +4,31 @@ everis Digital Identity <<did@everis.com>>
 
 ## Introduction
 
-TODO
+everisID seeks to facilitate internet-wide, self-sovereign identity. On that basis, identifiers must be both assigned and resolved in a decentralised way.
+
+In everisID, each identity is represented by an Ethereum smart contract called "Proxy contract", deployed on any Ethereum network. Through a forwarding mechanism, that contract represents the identity owner in all transactions on that network. Specificities about how the Proxy contract works are outside the scope of this document.
 
 ## DID Method Name
 
-The namestring that shall identify this DID method is: `ev`
 
-A DID that uses this method MUST begin with the following prefix: `did:ev:`. Per the DID specification, this string MUST be in lowercase. The remainder of the DID, after the prefix, is specified below.
+## DID format
+
+The DID specification defines the following format for DIDs:
+
+```
+did:<scheme><scheme-specific-identifier>
+```
 
 ## Method Specific Identifier
 
-The method specific identifier is composed of an optional Ethereum network identifier with a `:` separator, followed by a Hex-encoded Ethereum ERC725 smart contract address (without a `0x` prefix).
+The scheme that shall identify this DID method is: `ev`.
 
-	everisid-did = "did:ev:" everisid-mnid
+The method-specific identifier is composed of an optional Ethereum network identifier with a `:` separator, followed by an MNID.
+
+	everisid-did = "did:ev:" mnid
 	everisid-mnid  = 40*HEXDIG
 
-The `everis-mnid` is a string that is compliant with the [Multi-Network ID format](TODO).
+The `mnid` is a string that is compliant with the [Multi-Network ID format](TODO). It refers to the Multi-Network identifier of the identity's Proxy contract. An MNID is an encoding of an (address, networkID) pair, so it's possible to compute a DID from an address and networkID pair, and vice versa. Assuming networkIDs are unique and well known, a DID thus allows to discover the specific Proxy contract behind a given DID, and reciprocally.
 
 ### Example
 
