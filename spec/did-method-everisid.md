@@ -2,18 +2,23 @@
 
 ## Abstract
 
-This document describes the DID method used by the digital identity solution developped by everis, <strong>everisID</strong>.
-
-This specification conforms to the requirements specified in the <a href="https://w3c-ccg.github.io/did-spec/">DID draft specification</a> currently published by the W3C Credentials Community Group.
+This document describes the DID method used by the digital identity solution developped by everis, <strong>everisID</strong>. It conforms to the requirements specified in the <a href="https://w3c-ccg.github.io/did-spec/">DID draft specification</a> currently published by the W3C Credentials Community Group.
 
 ## Status of this Document
 This specification is an unofficial draft. It is provided as a reference for people and organisations who wish to implement software meant to interact with everisID existing components, or who wish to follow the same guidelines for their own software even if no interaction with everisID components is planned at first.
 
 ## Introduction
 
-everisID seeks to facilitate internet-wide, self-sovereign identity. On that basis, identifiers must be both assigned and resolved in a decentralised way.
+everisID seeks to facilitate internet-wide, self-sovereign identity. On that basis, identifiers must be both assigned, resolved and used in a decentralised way.
 
-In everisID, each identity is represented by an Ethereum smart contract called "Proxy contract", deployed on any Ethereum network. Through a forwarding mechanism, that contract represents the identity owner in all transactions on that network. Specificities about how the Proxy contract works are outside the scope of this document.
+Every everisID DID lives on a specific Ethereum blockchain and translates naturally to and from an Ethereum address on that blockchain, representing the entity in front of DApps. Additionally, any system that has access to a node in the same blockchain as a DID may perform (read, write, auth...) operations on that DID and use it off-chain if needed.
+
+The purpose of DIDs, and URIs in general, is interoperability. For that reason, everisID DIDs are as compatible as possible with existing standards such as Verifiable Credentials, and try to not impose that other actors in a given interaction use the same blockchain, the same DID method, or even a DID as their identifier.
+
+## Terminology
+- DID: A distributed identifier
+- Entity: Any person, organization, thing, vehicle, house, etc. that may be uniquely identified.
+
 
 ## DIDs
 
@@ -53,35 +58,29 @@ TODO
 
 ## CRUD Operation Definitions
 
+In everisID, each identity is represented by an Ethereum smart contract called "Proxy contract", deployed on a given Ethereum network. Through a forwarding mechanism, that contract represents the identity owner in all transactions on that network. Specificities about how the Proxy contract works are outside the scope of this document.
+
 ### Create (Register)
 
-In order to create an `ev` DID, a smart contract compliant with everis specification must be deployed on Ethereum. The DID is formed after the network identifier + the contract address combined as an MNID.
+In order to create an `ev` DID, a smart contract called Proxy contract must be deployed on Ethereum. The address of the deployed contract is used to compute the DID using the following algorithm:
+1. The contract's address and the Ethereum network ID are put together and converted into an MNID.
+2. The string "did:ev:" is prepended to the MNID.
 
 ### Read (Resolve)
 
 To construct a valid DID document from an `ev` DID, the following steps are performed:
 
-1. Determine the Ethereum network identifier and address from the MNID.
-2. TODO: To be determined.
+1. Extract the MNID as the method-specific part of the DID
+2. Determine the Ethereum network identifier and address from the MNID.
+3. Access relevant information about that DID: public profile, public keys authorized for authentication, etc.
 
 ### Update
 
-TODO. The DID Document may be updated by one authorised owner transacting with the contract.
+Only an authorized device for a given DID may update information about that DID.
 
 ### Delete (Revoke) 
 
-Revoking the DID can be supported by executing a `selfdestruct()` operation that is part of the smart contract. This will remove the smart contract's storage and code
-from the Ethereum state, effectively marking the DID as revoked.
-
-TODO: Implement.
-
-## Security Considerations
-
-TODO
-
-## Privacy Considerations
-
-TODO
+The delete operation is not currently supported. However, for must use cases it is sufficient to stop using a given DID, authenticating as that DID, or providing private or public information about it.
 
 ## Performance Considerations
 
