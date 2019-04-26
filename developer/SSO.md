@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This page explains how you can authenticate a user against their identity. This method is based on [OpenID Connect (OIDC)](https://openid.net/developers/specs/), which itself builds upon the [OAuth 2.0 framework](https://tools.ietf.org/html/rfc6749).
+This page explains how you can authenticate a user against their identity. This method is loosely inspired by [OpenID Connect (OIDC)](https://openid.net/developers/specs/), which itself builds upon the [OAuth 2.0 framework](https://tools.ietf.org/html/rfc6749).
 
 OAuth 2.0 defines the following actors:
 
