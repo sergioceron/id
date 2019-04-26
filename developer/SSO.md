@@ -37,7 +37,7 @@ To register your application, all you need to do is:
 
 ## Requesting authentication
 
-An authentication request is an URL of the following form: `https://everis.id/share?client_id={DID}&redirect_uri={URI}&state={STATE}
+An authentication request is an URL of the following form: `https://everis.id/share?client_id={DID}&redirect_uri={URI}&state={STATE}`
 
 The following parameters are mandatory:
 - `client_id`: The DID of your client application.
