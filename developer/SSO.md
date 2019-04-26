@@ -44,6 +44,9 @@ The following parameters are mandatory:
 - `redirect_uri`: The callback URI the user should call after the AS generated the token. This URI will receive the token as a query parameter.
 - `state`: An opaque string defined by you. That string will be provided as-is to the callback URI, as a query parameter also named `state`, allowing you to link the response to the original request.
 
+The following parameter is optional:
+- `description`: A free-form text that explains to the user why authentication is being requested.
+
 ## Verifying the user's identity
 
 Your service running at `redirect_uri` mentioned above will receive a query with the following query parameters:
