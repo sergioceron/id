@@ -2,16 +2,16 @@
 
 ## Introduction
 
-This page explains how you can authenticate a user against their identity. This method is based on OpenID Connect (OIDC), which is itself based on [OAuth 2.0](https://tools.ietf.org/html/rfc6749).
+This page explains how you can authenticate a user against their identity. This method is based on [OpenID Connect (OIDC)](https://openid.net/developers/specs/), which itself builds upon the [OAuth 2.0 framework](https://tools.ietf.org/html/rfc6749).
 
 OAuth 2.0 defines the following actors:
 
-| OAuth 2.0 / OIDC actor       | everisID component
-| ---------------------------- | -----------------------
-| Resource Owner (RO)          | User's identity (DID)
-| Authorization Server (AS)    | User's controlling device
-| Client or Relying Party (RP) | Your website or app
-| Resource Server (RS)         | Online location where a user's presentation is available
+| OAuth 2.0                 | OpenID Connect       | everisID component
+| ------------------------- | -------------------- | -----------------------
+| Resource Owner (RO)       | User                 | User's identity (DID)
+| Authorization Server (AS) | Authorization Server | User's controlling device
+| Client                    | Relying Party (RP)   | Your website or app
+| Resource Server (RS)      | Userinfo endpoint    | Online location where a user's presentation is available
 
 
 The following points are crucial for self-sovereign identity:
