@@ -7,11 +7,12 @@ This page explains how you can authenticate a user against their identity. This 
 OAuth 2.0 defines the following actors:
 
 | OAuth 2.0 / OIDC actor       | everisID component
-|--------------------------------------------------
+| ---------------------------- | -----------------------
 | Resource Owner (RO)          | User's identity (DID)
 | Authorization Server (AS)    | User's controlling device
 | Client or Relying Party (RP) | Your website or app
 | Resource Server (RS)         | Online location where a user's presentation is available
+
 
 The following points are crucial for self-sovereign identity:
 - **The Authorization Server is the user's own device** instead of a third party identity service (Facebook, Twitter, Google, etc.) as is the case in a centralised identity model.
