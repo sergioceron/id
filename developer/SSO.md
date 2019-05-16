@@ -62,6 +62,13 @@ The JWT contained in the `access_token` parameter is comprised of the following 
 - `userinfo`: The URL of the Resource Server where the user's Verifiable Presentation is available
 - `vp`: The Verifiable Presentation, inlined as a JSON object
 
+### Verifying that the device that signed the JWT represents the identity
+
+1. Compute the user's Proxy address from the DID
+2. Call `proxy.id()` to get the Id address
+3. Call `id.admin()` to get the Identity Manager address
+4. Call `im.hasCap(proxy, device, "auth")` and expect `true` as a response
+
 ## Accessing the user's protected resources
 
 To access user's information, you must query the URL referenced as `userinfo` in the JWT, and provide the token as an `Authorization` header, as described in [OpenID Connect specification](https://openid.net/specs/openid-connect-core-1_0.html#UserInfoRequest).
