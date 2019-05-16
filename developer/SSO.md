@@ -60,6 +60,7 @@ The JWT contained in the `access_token` parameter is comprised of the following 
 - `iat`: The date the JWT was issued at. You should check the JWT is not too old, otherwise it might be insecure.
 - `exp`: The date until which the JWT is valid. You should check that the JWT is not expired, otherwise it might be insecure.
 - `userinfo`: The URL of the Resource Server where the user's Verifiable Presentation is available
+- `vp`: The Verifiable Presentation, inlined as a JSON object
 
 ## Accessing the user's protected resources
 
