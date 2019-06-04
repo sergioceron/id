@@ -39,8 +39,10 @@ The scheme that shall identify this DID method is: `ev`.
 
 The method-specific identifier is composed of an optional Ethereum network identifier with a `:` separator, followed by an MNID.
 
+```
   everisid-did = "did:ev:" mnid
-  everisid-mnid  = 40*HEXDIG
+  mnid  = 40*HEXDIG
+```
 
 The `mnid` is a string that is compliant with the [Multi-Network ID format](TODO). It refers to the Multi-Network identifier of the identity's Proxy contract. An MNID is an encoding of an (address, networkID) pair, so it's possible to compute a DID from an address and networkID pair, and vice versa. Assuming networkIDs are unique and well known, a DID thus allows to discover the specific Proxy contract behind a given DID, and reciprocally.
 
@@ -54,15 +56,26 @@ Example `ev` DID:
 
 ### Example
 
-TODO
+```json
+{
+  "@context": "https://w3id.org/did/v1",
+  "id": "did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42",
+  "authentication": [{
+    "id": "did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42#keys-1",
+    "type": "EthereumAddress",
+    "controller": "did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42",
+    "publicKeyAddress": "0xaeaefd50a2c5cda393e9a1eef2d6ba23f2c4fd6d"
+  }]
+}
+```json
 
 ## CRUD Operation Definitions
 
-In everisID, each identity is represented by an Ethereum smart contract called "Proxy contract", deployed on a given Ethereum network. Through a forwarding mechanism, that contract represents the identity owner in all transactions on that network. Specificities about how the Proxy contract works are outside the scope of this document.
+In everisID, each identity is represented by the address of an smart contract called "Proxy contract", available on an Ethereum network.
 
 ### Create (Register)
 
-In order to create an `ev` DID, a smart contract called Proxy contract must be deployed on Ethereum. The address of the deployed contract is used to compute the DID using the following algorithm:
+In order to create an `ev` DID, a Proxy contract must be deployed on Ethereum. The address of the deployed contract is used to compute the DID using the following algorithm:
 1. The contract's address and the Ethereum network ID are put together and converted into an MNID.
 2. The string "did:ev:" is prepended to the MNID.
 
@@ -84,6 +97,4 @@ The delete operation is not currently supported. However, for must use cases it 
 
 ## Performance Considerations
 
-In Ethereum, looking up a raw public key from a native 20-byte address is a complex and resource-intensive process. The DID community may want to consider
-allowing hashed public keys in the DID documents instead of (or in addition to) the raw public keys. It seems this would make certain DID methods such as
-`ev` much simpler to implement, while at the same time not really limiting the spirit and potential use cases of DIDs.
+In Ethereum, looking up a raw public key from a native 20-byte address is a complex and resource-intensive process, which is why this specification refers to public keys in their "address" hash form. This makes the DID method much simpler to implement, while at the same time not really limiting the spirit of the DID specification.
