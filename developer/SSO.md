@@ -26,14 +26,14 @@ In OIDC, the following flow is used:
 
 ## Registering your client application
 
-Before anything, you need to register your client. This is similar to registering your application with a proprietary OAuth provider, except that you do it yourself.
+Before anything, you need to register your client. This is similar to registering your application with a proprietary OAuth provider, except that you do it yourself. You can follow these steps using e.g. everisID mobile app.
 
-To register your application, all you need to do is:
-- Create a DID for your application
-- Provide enough information in your application's public profile for users to trust it:
-  - **Name.** Any verified credential with a `name` attribute.
-  - **Callback URL.** Any self-verified credential(s) with one or several `redirect_uri` attributes. This is necessary to prevent other applications from using your client ID and stealing your users' tokens.
-  - **Logo (optional).** Any verified credential with an `image` attribute.
+1. Create a DID for your application
+2. Provide enough information about your application for users to trust it. At the very least, it should be:
+   - **Name.** Any verified credential with a `name` attribute.
+   - **Callback URL.** Any self-verified credential(s) with one or several `redirect_uri` attributes. This is necessary to prevent other applications from using your client ID and stealing your users' tokens.
+   - **Logo (optional).** Any verified credential with an `image` attribute.
+3. Make the created credentials available in your app's public presentation.
 
 ## Requesting authentication
 
