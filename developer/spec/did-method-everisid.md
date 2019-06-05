@@ -67,7 +67,7 @@ Example `ev` DID:
     "publicKeyAddress": "0xaeaefd50a2c5cda393e9a1eef2d6ba23f2c4fd6d"
   }]
 }
-```json
+```
 
 ## CRUD Operation Definitions
 
