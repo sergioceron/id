@@ -8,6 +8,6 @@ Just like all the protocols and communication frameworks that comprise the Inter
 
 Index:
 - ["ev" DID method](spec/did-method-everisid.md) and [smart contracts](spec/eip-proxy-id-contracts.md)
-- [Attestation registry](spec/eip-content-attestation-registry) and the corresponding [proof type for Verifiable Credentials](spec/attestation-registry-proof-type.md)
+- [Attestation registry](spec/eip-content-attestation-registry.md) and the corresponding [proof type for Verifiable Credentials](spec/attestation-registry-proof-type.md)
 - [Self-Sovereign Single Sign-on based on OAuth 2.0](SSO.md)
 - [Proof of Existence](spec/eip-proof-of-existence.md)
