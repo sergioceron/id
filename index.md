@@ -25,7 +25,7 @@ everisID proposes an ERC (Ethereum Request for Comments) draft called [Content A
 
 ### Single Sign-On
 
-For single sign-on purposes, everisID describes a way for identity owners (a.k.a. subjects) to authenticate on websites and mobile apps. We propose using OAuth 2.0, only in a self-sovereign. The trick to use OAuth 2.0 in a self-sovereign way is to use as Authorization Server the identity owner's own device, as opposed to a hard-defined AS in traditional services. The Relying Party is able to verify that the token's issuer is in fact an acceptable Authorization Server for that identity using the blockchain. See [Self-Sovereign Single Sign-on based on OAuth 2.0](SSO.md) for details.
+For single sign-on purposes, everisID describes a way for identity owners (a.k.a. subjects) to authenticate on websites and mobile apps. We propose using OAuth 2.0, only in a self-sovereign fashion. The trick for self-sovereign OAuth 2.0 is to use as Authorization Server the identity owner's own device, as opposed to a fixed AS in traditional services. When receiving the token, the Relying Party is able to verify dynamically that the token's issuer is indeed an acceptable Authorization Server for that identity using the blockchain. See [Self-Sovereign Single Sign-on based on OAuth 2.0](SSO.md) for details.
 
 ### Proof of Existence
 
