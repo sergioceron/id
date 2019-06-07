@@ -23,6 +23,8 @@ A Verifiable Credential (VC) contains a proof, which is what makes the credentia
 
 everisID proposes an ERC (Ethereum Request for Comments) draft called [Content Attestation Registry](spec/eip-content-attestation-registry.md) that describes a way for any entity to attest arbitrary content on a smart contract. There is a corresponding [proof type](spec/attestation-registry-proof-type.md) that enables to use that attestation registry inside a Verifiable Credential.
 
+Verifiable Presentations also need to be verifiable because the recipient must be able to assume that a legitimate credential holder is consenting to share that presentation with them. The mechanism is exactly the same as for Verifiable Credentials, i.e. a "proof" attribute in the VerifiablePresentation object.
+
 ### Single Sign-On
 
 For single sign-on purposes, everisID describes a way for identity owners (a.k.a. subjects) to authenticate on websites and mobile apps. We propose using OAuth 2.0, only in a self-sovereign fashion. The trick for self-sovereign OAuth 2.0 is to use as Authorization Server the identity owner's own device, as opposed to a fixed AS in traditional services. When receiving the token, the Relying Party is able to verify dynamically that the token's issuer is indeed an acceptable Authorization Server for that identity using the blockchain. See [Self-Sovereign Single Sign-on based on OAuth 2.0](SSO.md) for details.
