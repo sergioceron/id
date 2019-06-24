@@ -141,7 +141,7 @@ For digital identity to be self-sovereign, it needs to be able to rely on a trus
 This EIP doesn't introduce any known backwards compatibility issues. However, it does a similar job as other ERCs such as ERC-725 and others, and there are plans to integrate the most recent developments into this EIP.
 
 ## Implementation
-everisID mobile application provides an implementation of this EIP.
+everisID mobile application provides an implementation of the [Proxy](../contracts/Proxy.sol) and [Id](../contracts/Id.sol) contracts.
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
