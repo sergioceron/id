@@ -1,19 +1,19 @@
-# MyTrust DID Method
+# GlobalID DID Method
 
 ## Abstract
 
-This document describes the DID method used by <strong>MyTrust</strong> digital identity solution. It conforms to the requirements specified in the <a href="https://w3c-ccg.github.io/did-spec/">DID draft specification</a> currently published by the W3C Credentials Community Group.
+This document describes the GlobalID DID method. It conforms to the requirements specified in the <a href="https://w3c-ccg.github.io/did-spec/">DID draft specification</a> currently published by the W3C Credentials Community Group.
 
 ## Status of this Document
-This specification is an unofficial draft. It is provided as a reference for people and organisations who wish to implement software meant to interact with MyTrust existing components, or who wish to follow the same guidelines for their own software even if no interaction with MyTrust components is planned at first.
+This specification is an unofficial draft. It is provided as a reference for people and organisations who wish to implement software meant to interact with GlobalID DID method.
 
 ## Introduction
 
-MyTrust seeks to facilitate internet-wide, self-sovereign identity. On that basis, identifiers must be both assigned, resolved and used in a decentralised way.
+The DID specification seeks to facilitate internet-wide, self-sovereign identity. On that basis, identifiers must be both assigned, resolved and used in a decentralised way.
 
-Every MyTrust DID lives on a specific Ethereum blockchain and translates naturally to and from an Ethereum address on that blockchain, representing the entity in front of DApps. Additionally, any system that has access to a node in the same blockchain as a DID may perform (read, write, auth...) operations on that DID and use it off-chain if needed.
+Every GlobalID DID lives on a specific Ethereum blockchain and translates naturally to and from an Ethereum address on that blockchain, representing the entity in front of DApps. Additionally, any system that has access to a node in the same blockchain as a DID may perform (read, write, auth...) operations on that DID and use it off-chain if needed.
 
-The purpose of DIDs, and URIs in general, is interoperability. For that reason, MyTrust DIDs are as compatible as possible with existing standards such as Verifiable Credentials, and try to not impose that other actors in a given interaction use the same blockchain, the same DID method, or even a DID as their identifier.
+The purpose of DIDs, and URIs in general, is interoperability. For that reason, GlobalID DIDs are as compatible as possible with existing standards such as Verifiable Credentials, and try to not impose that other actors in a given interaction use the same blockchain, the same DID method, or even a DID as their identifier.
 
 ## Terminology
 - DID: A distributed identifier
@@ -40,7 +40,7 @@ The scheme that shall identify this DID method is: `gid`.
 The method-specific identifier is composed of an optional Ethereum network identifier with a `:` separator, followed by an MNID.
 
 ```
-  mytrust-did = "did:gid:" mnid
+  gid-did = "did:gid:" mnid
   mnid  = 40*HEXDIG
 ```
 
@@ -71,7 +71,7 @@ Example `gid` DID:
 
 ## CRUD Operation Definitions
 
-In MyTrust, each identity is represented by the address of an smart contract called "Proxy contract", available on an Ethereum network.
+Each identity is represented by the address of an smart contract called "Proxy contract", available on an Ethereum network.
 
 ### Create (Register)
 
