@@ -32,7 +32,7 @@ did:<scheme>:<scheme-specific-identifier>
 
 ### DID Method Name
 
-The scheme that shall identify this DID method is: `ev`.
+The scheme that shall identify this DID method is: `gid`.
 
 ### Method-Specific Identifier
 
@@ -40,7 +40,7 @@ The scheme that shall identify this DID method is: `ev`.
 The method-specific identifier is composed of an optional Ethereum network identifier with a `:` separator, followed by an MNID.
 
 ```
-  mytrust-did = "did:ev:" mnid
+  mytrust-did = "did:gid:" mnid
   mnid  = 40*HEXDIG
 ```
 
@@ -48,9 +48,9 @@ The `mnid` is a string that is compliant with the [Multi-Network ID format](TODO
 
 ### Example
 
-Example `ev` DID:
+Example `gid` DID:
 
- * `did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42`
+ * `did:gid:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42`
 
 ## DID Document
 
@@ -59,11 +59,11 @@ Example `ev` DID:
 ```json
 {
   "@context": "https://w3id.org/did/v1",
-  "id": "did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42",
+  "id": "did:gid:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42",
   "authentication": [{
-    "id": "did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42#keys-1",
+    "id": "did:gid:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42#keys-1",
     "type": "EthereumAddress",
-    "controller": "did:ev:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42",
+    "controller": "did:gid:2uzPtwJmXbBqMmP9DkR7dE3FcLmgYejdJ42",
     "publicKeyAddress": "0xaeaefd50a2c5cda393e9a1eef2d6ba23f2c4fd6d"
   }]
 }
@@ -75,13 +75,13 @@ In MyTrust, each identity is represented by the address of an smart contract cal
 
 ### Create (Register)
 
-In order to create an `ev` DID, a Proxy contract must be deployed on Ethereum. The address of the deployed contract is used to compute the DID using the following algorithm:
+In order to create an `gid` DID, a Proxy contract must be deployed on Ethereum. The address of the deployed contract is used to compute the DID using the following algorithm:
 1. The contract's address and the Ethereum network ID are put together and converted into an MNID.
-2. The string "did:ev:" is prepended to the MNID.
+2. The string "did:gid:" is prepended to the MNID.
 
 ### Read (Resolve)
 
-To construct a valid DID document from an `ev` DID, the following steps are performed:
+To construct a valid DID document from an `gid` DID, the following steps are performed:
 
 1. Extract the MNID as the method-specific part of the DID
 2. Determine the Ethereum network identifier and address from the MNID.
