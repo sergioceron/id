@@ -5,7 +5,7 @@
 This document introduces a new embedded proof type for Verifiable Credentials and Verifiable Presentations, as described in [Verifiable Credentials Data Model](https://w3c.github.io/vc-data-model/)'s ["Proofs" section](https://w3c.github.io/vc-data-model/#proofs-signatures), currently published by the W3C Credentials Community Group.
 
 ## Status of this Document
-This specification is an unofficial draft. It is provided as a reference for people and organisations who wish to implement software meant to interact with everisID existing components, or who wish to follow the same guidelines for their own software even if no interaction with everisID components is planned at first.
+This specification is an unofficial draft. It is provided as a reference for people and organisations who wish to implement Ethereum-based proofs.
 
 ## Introduction
 
