@@ -1,5 +1,9 @@
 # Developer documentation
 
+## Notes
+
+This work was done by [everis](https://everis.com/) and was donated to LACChain Consortium.
+
 ## Introduction
 
 This is the developer documentation for LACChain ID. Here, you will find all the resources you need to use LACChain ID on your app or website.
