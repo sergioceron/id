@@ -17,7 +17,7 @@ LACChain ID achieves that by using a decentralised trust repository (a blockchai
 ## Protocol stack
 
 ### Identifiers
-LACChain ID uses the standard DID protocol for identifiers, and defines a ["gid" DID method](spec/did-method-everisid.md), complemented by [smart contracts](spec/eip-proxy-id-contracts.md).
+LACChain ID uses the standard DID protocol for identifiers, and defines a ["gid" DID method](spec/did-method-gid.md), complemented by [smart contracts](spec/eip-proxy-id-contracts.md).
 
 ### Credentials and proofs
 
