@@ -2,17 +2,17 @@
 
 ## Notes
 
-This work was done by [everis](https://everis.com/) and was donated to LACChain Consortium.
+This work was done by [everis](https://everis.com/) and was donated to LACChain Consortium. It is a work in progress.
 
 ## Introduction
 
-This is the developer documentation for LACChain ID. Here, you will find all the resources you need to use LACChain ID on your app or website.
+LACChain ID is the techno-legal framework that the LACChain consortium will provide to the LACChain community. This framework will define the different areas that make up the digital identity of a person, an entity or an object, and will propose open source standards, legal considerations and best practices. 
 
-LACChain ID is a trust framework, i.e. a set of protocols that enable people and organizations to convey trust between one another.
+This repository contains the developer documentation for LACChain ID. Here, you will find all the resources you need to use LACChain ID on your app or website.
 
-It has the particularity of enabling self-sovereign identity. This means that nobody (no everis, not any government, etc.) may control, block, censure, delete or spoof users' identity, restrict what users may do with their identity, or access information that users didn't agree to share.
+The set of protocols made available enable people and organizations to convey trust between one another on the internet thorugh self-sovereign identity. This means that nobody may control, block, censure, delete or spoof users' identity, restrict what users may do with their identity, or access information that users do not wish to share.
 
-LACChain ID achieves that by using a decentralised trust repository (a blockchain) for identities, for credential proofs, consent, etc. The blockchain itself only stores proofs of data integrity. Any litteral information is kept off-chain, so LACChain ID may be used on any private or public Ethereum network.
+LACChain ID achieves that by using a decentralised trust repository (a blockchain) for identities, for credential proofs, consent, etc. The blockchain itself only stores proofs of data integrity through cryptography. Any personal information is kept off-chain, so LACChain ID may be used on any private or public Ethereum network.
 
 ## Protocol stack
 
