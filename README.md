@@ -12,7 +12,7 @@ This repository contains the developer documentation for LACChain ID. Here, you 
 
 LACChain ID achieves that by using a decentralised trust repository (a blockchain) for identities, for credential proofs, consent, etc. The blockchain itself only stores proofs of data integrity through cryptography. Any personal information is kept off-chain, so LACChain ID may be used on any private or public Ethereum network.
 
-Both the framework and the documentation available in this are a work in progress.
+Both the framework and the documentation available in this repository are a work in progress.
 
 ## Protocol stack
 
